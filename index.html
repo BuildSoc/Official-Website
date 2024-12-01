@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>Buildsoc - An AI to Urban Planning</title>
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="twitter:description"
+      content="BUILD Society (Building Urban Intelligence with Learning Data) is a collaborative platform aimed at utilizing data-driven insights to solve complex urban issues. We bring together planners, technologists, and urban enthusiasts to create sustainable, intelligent cities."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.buildsoc.in/assets/img/icon.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      name="description"
+      content="BUILD Society (Building Urban Intelligence with Learning Data) is a collaborative platform aimed at utilizing data-driven insights to solve complex urban issues. We bring together planners, technologists, and urban enthusiasts to create sustainable, intelligent cities."
+    />
+    <meta
+      property="og:image"
+      content="https://www.buildsoc.in/assets/img/icon.png"
+    />
+    <meta name="twitter:title" content="BUILD Society" />
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "name": "Buildsoc",
+        "url": "https://www.buildsoc.in"
+      }
+    </script>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="1080x1080"
+      href="assets/img/unplanned.svg"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="1080x1080"
+      href="assets/img/unplanned.svg"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="1080x1080"
+      href="assets/img/unplanned.svg"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="1080x1080"
+      href="assets/img/unplanned.svg"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="1080x1080"
+      href="assets/img/unplanned.svg"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="1080x1080"
+      href="assets/img/unplanned.svg"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="1080x1080"
+      href="assets/img/unplanned.svg"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <link rel="manifest" href="manifest.json" crossorigin="use-credentials" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,600,700&amp;display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&amp;display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Meddon&amp;display=swap"
+    />
+    <link rel="stylesheet" href="assets/css/styles.min.css" />
+    <script>
+      !(function (t, e) {
+        var o, n, p, r;
+        e.__SV ||
+          ((window.posthog = e),
+          (e._i = []),
+          (e.init = function (i, s, a) {
+            function g(t, e) {
+              var o = e.split(".");
+              2 == o.length && ((t = t[o[0]]), (e = o[1])),
+                (t[e] = function () {
+                  t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+                });
+            }
+            ((p = t.createElement("script")).type = "text/javascript"),
+              (p.async = !0),
+              (p.src = s.api_host + "/static/array.js"),
+              (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(
+                p,
+                r
+              );
+            var u = e;
+            for (
+              void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
+                u.people = u.people || [],
+                u.toString = function (t) {
+                  var e = "posthog";
+                  return (
+                    "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e
+                  );
+                },
+                u.people.toString = function () {
+                  return u.toString(1) + ".people (stub)";
+                },
+                o =
+                  "capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(
+                    " "
+                  ),
+                n = 0;
+              n < o.length;
+              n++
+            )
+              g(u, o[n]);
+            e._i.push([i, s, a]);
+          }),
+          (e.__SV = 1));
+      })(document, window.posthog || []);
+      posthog.init("phc_8dj7Wfkr9UrdBnjPmrP77TMvJgxcpMldBJnrS4VsxEJ", {
+        api_host: "https://app.posthog.com",
+      });
+    </script>
+  </head>
+  <body style="font-family: 'DM Sans', sans-serif; color: white">
+    <section
+      class="pb-5"
+      style="
+        min-height: 100vh;
+        background: linear-gradient(
+            90deg,
+            black 0%,
+            rgb(0, 0, 64) 36%,
+            rgb(0, 27, 19) 70%,
+            black 100%
+          ),
+          #0b0d0d;
+      "
+    >
+      <header
+        class="border-dark d-flex justify-content-between align-items-center py-3 px-1 border-bottom sticky-top"
+        id="nav"
+        style="
+          background: linear-gradient(
+              90deg,
+              black 0%,
+              rgb(0, 0, 64) 36%,
+              rgb(0, 27, 19) 70%,
+              black 100%
+            ),
+            rgba(0, 0, 0, 0.7);
+        "
+      >
+        <span
+          ><a class="h6 me-4" href="#">Building Urban Intelligence</a
+          ><a
+            class="mx-2 hlink"
+            href="#about"
+            style="
+              color: rgba(255, 255, 255, 0.8);
+              font-size: 0.875rem;
+              font-family: 'IBM Plex Mono', monospace;
+            "
+            >About</a
+          ><a
+            class="mx-2 hlink"
+            href="#community"
+            style="
+              color: rgba(255, 255, 255, 0.8);
+              font-size: 0.875rem;
+              font-family: 'IBM Plex Mono', monospace;
+            "
+            >Community</a
+          ><a
+            class="mx-2 hlink"
+            href="#team"
+            style="
+              color: rgba(255, 255, 255, 0.8);
+              font-size: 0.875rem;
+              font-family: 'IBM Plex Mono', monospace;
+            "
+            >Team</a
+          ></span
+        ><a
+          class="btn btn-light rounded-pill border-2"
+          role="button"
+          target="_blank"
+          href="https://github.com/BuildSoc"
+          >Get Started<svg
+            xmlns="http://www.w3.org/2000/svg"
+            enable-background="new 0 0 24 24"
+            height="1em"
+            viewBox="0 0 24 24"
+            width="1em"
+            fill="currentColor"
+            style="margin-left: 3px; margin-bottom: 3px"
+          >
+            <g><rect fill="none" height="24" width="24"></rect></g>
+            <g>
+              <polygon
+                points="6,6 6,8 14.59,8 5,17.59 6.41,19 16,9.41 16,18 18,18 18,6"
+              ></polygon>
+            </g></svg
+        ></a>
+      </header>
+
+      <div class="py-5" style="max-width: 560px; height: 100%">
+        <span
+          class="badge py-2 px-3 my-3"
+          style="
+            font-family: 'IBM Plex Mono', monospace;
+            background: rgba(255, 255, 255, 0.2);
+          "
+          ><span style="font-weight: normal !important"
+            >WELCOME&nbsp;YOU!</span
+          ></span
+        >
+        <h1>Welcome to Our Incredible<br />BUILD Community,</h1>
+        <p
+          class="h5 fw-normal pb-3"
+          style="font-family: 'DM Sans'; color: rgba(255, 255, 255, 0.7)"
+        >
+          We are excited to have you join BUILD Society in our journey towards
+          creating sustainable and intelligent cities. As part of this mission,
+          you will help transform urban environments using data-driven insights
+          and innovative technology.
+          <br /><br />Keep innovating, keep growing, and let’s make our cities
+          smarter and more sustainable!<br /><br />Best,
+        </p>
+        <p
+          class="h4 fw-normal"
+          style="
+            font-family: Meddon, serif;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 500px;
+          "
+        >
+          Bharat Oraon&nbsp; &nbsp;
+        </p>
+        <div class="py-5">
+          <img
+            src="assets/img/buildsoc.png"
+            style="width: 100%; max-width: 300px"
+          />
+        </div>
+      </div>
+    </section>
+    <section
+      id="about"
+      class="py-5"
+      style="
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzlhdHBsZWJieHFiYzAzaXBiN3g5ZDQ4MDlwY2V3bGZneTF6ejdjbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NKEt9elQ5cR68/giphy.gif')
+            center / cover;
+        min-height: 100vh;
+        background-size: auto, cover;
+      "
+    >
+      <div class="sticky-top py-3" style="max-width: 600px">
+        <span
+          class="badge py-2 px-3 my-2"
+          style="
+            font-family: 'IBM Plex Mono', monospace;
+            background: rgba(0, 0, 0, 0.2);
+          "
+          ><span style="font-weight: normal !important">ABOUT</span></span
+        >
+        <h2>What is BUILD Society?</h2>
+        <p
+          class="h2 fw-normal"
+          style="font-family: 'DM Sans'; color: rgba(255, 255, 255, 0.7)"
+        >
+          BUILD (Building Urban Intelligence with Learning Data) is a platform
+          for urban planners, technologists, and innovators aimed at harnessing
+          data and technology to tackle urban challenges. We foster a culture of
+          collaboration to create efficient, sustainable, and livable urban
+          spaces.
+        </p>
+        <div class="my-4" style="font-family: 'IBM Plex Mono', monospace">
+          <a
+            class="btn btn-light me-3"
+            role="button"
+            href="https://build-soc.gitbook.io/buildsoc"
+            target="_blank"
+            >Access Resources</a
+          ><a
+            class="btn btn-outline-light"
+            role="button"
+            href="https://lu.ma/buildsoc"
+            target="_blank"
+            >Calendar</a
+          >
+        </div>
+      </div>
+    </section>
+    <section
+      id="community"
+      class="py-5"
+      style="
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url('assets/img/background-1.jpg') center / cover;
+        min-height: 100vh;
+        background-size: auto, cover;
+      "
+    >
+      <div class="sticky-top float-end" style="max-width: 600px">
+        <span
+          class="badge py-2 px-3 my-2"
+          style="
+            font-family: 'IBM Plex Mono', monospace;
+            background: rgba(0, 0, 0, 0.2);
+          "
+          ><span style="font-weight: normal !important">COMMUNITY</span></span
+        >
+        <h2>What is the Community all about?</h2>
+        <p
+          class="h2 fw-normal"
+          style="font-family: 'DM Sans'; color: rgba(255, 255, 255, 0.7)"
+        >
+          BUILD Society's community is at the heart of our mission to foster
+          urban intelligence. It's a diverse group of individuals who are
+          passionate about leveraging data, sharing knowledge, and working
+          together to solve the urban challenges of tomorrow.
+        </p>
+      </div>
+    </section>
+    <section
+      id="team"
+      class="py-5"
+      style="
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url('assets/img/building.jpg')
+            center / cover;
+        background-size: auto, cover;
+        min-height: 100vh;
+      "
+    >
+      <div style="max-width: 600px">
+        <span
+          class="badge py-2 px-3 my-2"
+          style="
+            font-family: 'IBM Plex Mono', monospace;
+            background: rgba(0, 0, 0, 0.2);
+          "
+          ><span style="font-weight: normal !important">TEAM</span></span
+        >
+        <h2>Who is behind Buildsoc?</h2>
+        <p
+          class="h2 fw-normal"
+          style="font-family: 'DM Sans'; color: rgba(255, 255, 255, 0.7)"
+        >
+          Our team is composed of urban planners, data enthusiast, and
+          technologists with a shared passion for building smarter cities. We
+          believe in harnessing technology to create impactful change in our
+          urban environments.
+        </p>
+      </div>
+      <div class="container py-4 py-xl-5">
+        <div
+          class="row gy-4 row-cols-2 row-cols-md-4"
+          style="
+            max-width: 600px;
+            font-weight: 500;
+            font-family: 'IBM Plex Mono', monospace;
+            text-align: center;
+            line-height: 140%;
+          "
+        >
+          <div
+            class="col-sm-4 col-lg-4 d-flex flex-column justify-content-center align-items-center"
+          >
+            <a href="https://linkedin.com/in/bharatoraon/" target="_blank"
+              ><img
+                class="rounded-circle mb-3 fit-cover"
+                width="130"
+                height="130"
+                src="assets/img/bharatoraon.jpeg"
+              />
+              <p class="fs-4">Bharat<br />Oraon</p></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section
+      class="d-lg-flex justify-content-lg-end py-5"
+      id="contact"
+      style="color: black"
+    >
+      <div class="sticky-top" style="max-width: 620px">
+        <span class="badge py-2 px-3 my-2" style="font-family: 'IBM Plex Mono', monospace;background: rgba(0,0,0,0.8);"><span style="font-weight: normal !important;">CONTACT</span></span>
+        <h2>How can I engage with the team?</h2>
+        <p
+          class="h2 fw-normal"
+          style="font-family: 'DM Sans'; color: rgba(0, 0, 0, 0.7)"
+        >
+          We are always eager to connect with enthusiasts who share our vision.
+          Feel free to reach out to us for collaborations, inquiries or join at
+          <a
+            href="mailto:mail@buildsoc.in"
+            ><span style="color: rgb(0, 0, 0)"
+              >mail@buildsoc.in
+              </span
+            ></a
+          >
+        </p>
+        <div class="my-4" style="font-family: 'IBM Plex Mono', monospace">
+          <a
+            class="btn btn-outline-dark mb-2"
+            role="button"
+            href="https://lu.ma/buildsoc"
+            target="_blank"
+            >Get Notified / Mailing List</a
+          >
+        </div>
+      </div>
+    </section>
+    <footer class="text-center py-4 my-3 border-top">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-lg-3">
+          <div class="col d-flex justify-content-center align-items-center">
+            <p class="text-muted my-2">
+              Copyright&nbsp;© Buildsoc
+                </a
+              >
+            </p>
+          </div>
+          <div
+            class="col d-flex flex-column justify-content-center align-items-center"
+          >
+            <a
+              class="btn btn-primary d-flex justify-content-center align-items-center"
+              role="button"
+              href="https://www.linkedin.com/company/buildsoc/"
+              target="_blank"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+                class="bi bi-linkedin"
+              >
+                <path
+                  d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401m-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4"
+                ></path></svg
+              >&nbsp;Follow Us on LinkedIn</a
+            >
+          </div>
+          <div
+            class="col d-lg-flex justify-content-lg-center align-items-lg-center"
+          >
+            <ul class="list-inline my-2">
+              <li class="list-inline-item">
+                <a
+                  class="link-secondary"
+                  href=""
+                  >FAQs</a
+                >
+              </li>
+              <li class="list-inline-item">
+                <a
+                  class="link-secondary"
+                  href=""
+                  >Terms</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      data-cfasync="false"
+      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
